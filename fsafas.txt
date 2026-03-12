@@ -1,0 +1,79 @@
+cnotley@IDXC6GLHHD2V5 daicoe-parnassius-v2 % databricks bundle deploy -p "$DEV_PROFILE" -t "$TARGET" \
+  --var="git_branch=$FEATURE_BRANCH" \
+  --var="rxnav_source_path=$RXNAV_PATH"
+Uploading bundle files to /Workspace/Users/chris-notley@idexx.com/.bundle/parnassius_v2/dev_chris/files...
+Deploying resources...
+Updating deployment state...
+Deployment complete!
+cnotley@IDXC6GLHHD2V5 daicoe-parnassius-v2 % databricks bundle run -p "$DEV_PROFILE" -t "$TARGET" \
+  --var="git_branch=$FEATURE_BRANCH" \
+  --var="rxnav_source_path=$RXNAV_PATH" \
+  "$JOB_KEY"
+Run URL: https://dbc-87d466c1-792a.cloud.databricks.com/?o=1689232693533696#job/2902094891343/run/1100936122142352
+
+2026-03-12 09:53:18 "dev_chris_notley_parnassius_worflow" RUNNING
+2026-03-12 09:58:32 "dev_chris_notley_parnassius_worflow" INTERNAL_ERROR FAILED Task sanity_check failed with message: Workload failed, see run output for details. This caused all downstream tasks to get skipped.
+Task sanity_check FAILED:
+ValueError: No _SUCCESS files found. job_s3_path=s3://parnassius-v2/cis-input/env/dev/, computed_base_path=s3://parnassius-v2/cis-input/env/dev/2026/3/, all_files_count=0, success_file_count=0
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+File <command-7351424195250578>, line 6
+      3 print(f"latest_df_path={latest_df_path}")
+      5 if not latest_df_path:
+----> 6     raise ValueError(
+      7         f"No _SUCCESS files found. "
+      8         f"job_s3_path={s3_path}, computed_base_path={base_path}, "
+      9         f"all_files_count={len(all_files)}, success_file_count={len(success_files)}"
+     10     )
+
+ValueError: No _SUCCESS files found. job_s3_path=s3://parnassius-v2/cis-input/env/dev/, computed_base_path=s3://parnassius-v2/cis-input/env/dev/2026/3/, all_files_count=0, success_file_count=0
+
+Error: Task sanity_check failed!
+Error:
+ValueError: No _SUCCESS files found. job_s3_path=s3://parnassius-v2/cis-input/env/dev/, computed_base_path=s3://parnassius-v2/cis-input/env/dev/2026/3/, all_files_count=0, success_file_count=0
+Trace:
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+File <command-7351424195250578>, line 6
+      3 print(f"latest_df_path={latest_df_path}")
+      5 if not latest_df_path:
+----> 6     raise ValueError(
+      7         f"No _SUCCESS files found. "
+      8         f"job_s3_path={s3_path}, computed_base_path={base_path}, "
+      9         f"all_files_count={len(all_files)}, success_file_count={len(success_files)}"
+     10     )
+
+ValueError: No _SUCCESS files found. job_s3_path=s3://parnassius-v2/cis-input/env/dev/, computed_base_path=s3://parnassius-v2/cis-input/env/dev/2026/3/, all_files_count=0, success_file_count=0
+Task sanity_check FAILED:
+ValueError: No _SUCCESS files found. job_s3_path=s3://parnassius-v2/cis-input/env/dev/, computed_base_path=s3://parnassius-v2/cis-input/env/dev/2026/3/, all_files_count=0, success_file_count=0
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+File <command-7351424195250578>, line 6
+      3 print(f"latest_df_path={latest_df_path}")
+      5 if not latest_df_path:
+----> 6     raise ValueError(
+      7         f"No _SUCCESS files found. "
+      8         f"job_s3_path={s3_path}, computed_base_path={base_path}, "
+      9         f"all_files_count={len(all_files)}, success_file_count={len(success_files)}"
+     10     )
+
+ValueError: No _SUCCESS files found. job_s3_path=s3://parnassius-v2/cis-input/env/dev/, computed_base_path=s3://parnassius-v2/cis-input/env/dev/2026/3/, all_files_count=0, success_file_count=0
+
+Error: Task sanity_check failed!
+Error:
+ValueError: No _SUCCESS files found. job_s3_path=s3://parnassius-v2/cis-input/env/dev/, computed_base_path=s3://parnassius-v2/cis-input/env/dev/2026/3/, all_files_count=0, success_file_count=0
+Trace:
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+File <command-7351424195250578>, line 6
+      3 print(f"latest_df_path={latest_df_path}")
+      5 if not latest_df_path:
+----> 6     raise ValueError(
+      7         f"No _SUCCESS files found. "
+      8         f"job_s3_path={s3_path}, computed_base_path={base_path}, "
+      9         f"all_files_count={len(all_files)}, success_file_count={len(success_files)}"
+     10     )
+
+ValueError: No _SUCCESS files found. job_s3_path=s3://parnassius-v2/cis-input/env/dev/, computed_base_path=s3://parnassius-v2/cis-input/env/dev/2026/3/, all_files_count=0, success_file_count=0
+Error: failed to reach TERMINATED or SKIPPED, got INTERNAL_ERROR: Task sanity_check failed with message: Workload failed, see run output for details. This caused all downstream tasks to get skipped.
+cnotley@IDXC6GLHHD2V5 daicoe-parnassius-v2 % 
